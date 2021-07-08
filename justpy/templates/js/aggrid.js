@@ -54,6 +54,10 @@ Vue.component('grid', {
                 checkboxRenderer: CheckboxRenderer
             };
 
+            // Convert user components into javascript objects
+            for (const [key, value] of Object.entries(this.$props.jp_props.components)) {
+                eval('grid_def.components[key] = ' + value);
+            }
 
             new agGrid.Grid(document.getElementById(this.$props.jp_props.id.toString()), grid_def);  // the api calls are added to grid_def
             cached_grid_def['g' + this.$props.jp_props.id] = grid_def;

@@ -30,6 +30,7 @@ class AgGrid(JustpyBaseComponent):
         self.classes = ''
         self.style = 'height: 99vh; width: 99%; margin: 0.25rem; padding: 0.25rem;'
         self.evaluate = []  # Fields for evaluation
+        self.components = {} # Javascrtipt Function Components
         self.show = True
         self.pages = {}
         self.auto_size = True   # If True, automatically resize columns after load to optimal fit
@@ -119,4 +120,5 @@ class AgGrid(JustpyBaseComponent):
         d['events'] = self.events
         d['html_columns'] = self.html_columns
         d['evaluate'] = self.evaluate
+        d['components'] = self.components
         return d
